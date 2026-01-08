@@ -9,8 +9,7 @@
 ---
 
 <a href="https://github.com/hariharan-1607">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=hariharan-1607&show_icons=true&theme=radical&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hariharan-1607&layout=compact&theme=radical"/>
+  <img src="https://github.com/hariharan-1607.png" width="150" style="border-radius: 50%;" alt="Hari's GitHub Profile" />
 </a>
 
 </div>
@@ -28,9 +27,9 @@
 ## 🛠️ Languages and Tools
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,python,nodejs" />
+  <img src="https://skillicons.dev/icons?i=html,css,js,react,python,nodejs" />
   <br/>
-  <img src="https://skillicons.dev/icons?i=git,github,vscode,figma,mongodb,firebase,tailwind,vite" />
+  <img src="https://skillicons.dev/icons?i=git,github,vscode,figma,mongodb,vite" />
 </div>
 
 ---
