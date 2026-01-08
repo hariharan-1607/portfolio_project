@@ -4,7 +4,7 @@
 
 <div align="center">
 
-<h3>🚀 Exploring the universe of code, one commit at a time.</h3>
+<h3>🚀 Learning something new with every line of code.</h3>
 
 ---
 
