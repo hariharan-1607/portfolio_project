@@ -9,7 +9,7 @@
 ---
 
 <a href="https://github.com/hariharan-1607">
-  <img src="https://github.com/hariharan-1607.png" width="150" style="border-radius: 50%;" alt="Hari's GitHub Profile" />
+  <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="Hari's GitHub Profile" />
 </a>
 
 </div>
@@ -43,10 +43,12 @@
 
 ---
 
-## 📈 GitHub Streak
+## 🚀 LeetCode Profile
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=hariharan-1607&theme=radical&hide_border=true" alt="Hari's Streak" />
+  <a href="https://leetcode.com/u/hariharan_1607/" target="_blank">
+    <img src="https://img.shields.io/badge/LeetCode-000000?style=for-the-badge&logo=LeetCode&logoColor=#d16c06" target="_blank" />
+  </a>
 </div>
 
 ---
