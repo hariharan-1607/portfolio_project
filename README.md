@@ -8,9 +8,9 @@
 
 ---
 
-<a href="https://github.com/harib">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=harib&show_icons=true&theme=radical&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=harib&layout=compact&theme=radical"/>
+<a href="https://github.com/hariharan-1607">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=hariharan-1607&show_icons=true&theme=radical&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hariharan-1607&layout=compact&theme=radical"/>
 </a>
 
 </div>
@@ -47,7 +47,7 @@
 ## 📈 GitHub Streak
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=harib&theme=radical&hide_border=true" alt="Hari's Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=hariharan-1607&theme=radical&hide_border=true" alt="Hari's Streak" />
 </div>
 
 ---
