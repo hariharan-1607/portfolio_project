@@ -149,11 +149,11 @@ ul {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
     padding-top: 80px;
     /* navbar height */
 }
@@ -401,6 +401,7 @@ ul {
 
 .project-info {
     padding: 30px;
+    text-align: center;
 }
 
 .project-info h3 {
@@ -419,6 +420,7 @@ ul {
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 25px;
+    justify-content: center;
 }
 
 .tags span {
