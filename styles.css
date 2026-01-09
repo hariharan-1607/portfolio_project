@@ -62,17 +62,14 @@ ul {
     font-size: 2.5rem;
     margin-bottom: 60px;
     position: relative;
-    /* Removed fragile centering properties */
+    /* Removed inline-block and transform hack for better centering */
 }
 
-.section-title span,
-.logo span,
-.skill-card i {
+.section-title span {
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: transparent;
 }
 
 .section-title::after {
@@ -112,18 +109,8 @@ ul {
     color: var(--text-light);
 }
 
-
-
-/* Scroll Animations */
-.hidden {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
+.logo span {
+    color: var(--secondary-color);
 }
 
 .nav-links {
@@ -315,10 +302,6 @@ ul {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.about-text {
-    text-align: center;
-}
-
 .about-text p {
     margin-bottom: 20px;
     color: var(--text-dim);
@@ -372,14 +355,17 @@ ul {
 
 .skill-card:hover {
     transform: translateY(-10px);
-    background: rgba(99, 102, 241, 0.15);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    border-color: var(--primary-color);
+    background: rgba(99, 102, 241, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .skill-card i {
     font-size: 3rem;
     margin-bottom: 20px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .skill-card h3 {
@@ -411,12 +397,10 @@ ul {
 .project-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary-color);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 .project-info {
     padding: 30px;
-    text-align: center;
 }
 
 .project-info h3 {
@@ -435,7 +419,6 @@ ul {
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 25px;
-    justify-content: center;
 }
 
 .tags span {
@@ -577,32 +560,7 @@ footer {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: var(--bg-dark);
-        padding: 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        gap: 20px;
-        animation: slideDown 0.3s ease forwards;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    @keyframes slideDown {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        /* simple helper, real logic should be js toggle */
     }
 
     .hamburger {
