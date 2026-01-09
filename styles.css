@@ -51,6 +51,14 @@ ul {
 /* Sections */
 .section {
     padding: 100px 0;
+    transition: filter 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: filter, opacity;
+}
+
+.section.inactive-section {
+    filter: blur(15px);
+    opacity: 0.15;
+    pointer-events: none;
 }
 
 .bg-light {
