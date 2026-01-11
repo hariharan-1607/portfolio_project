@@ -359,6 +359,11 @@ ul {
     text-align: center;
     transition: var(--transition);
     border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 280px;
 }
 
 .skill-card:hover {
@@ -370,8 +375,9 @@ ul {
 .skill-card h3,
 .skill-card p {
     opacity: 0;
-    transform: translateY(10px);
-    transition: var(--transition);
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
 }
 
 .skill-card:hover h3,
@@ -379,12 +385,12 @@ ul {
 .skill-card.active h3,
 .skill-card.active p {
     opacity: 1;
-    transform: translateY(0);
+    max-height: 150px;
+    margin-top: 10px;
 }
 
 .skill-card i {
-    font-size: 4rem;
-    margin-bottom: 20px;
+    font-size: 5rem;
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
@@ -395,6 +401,7 @@ ul {
 .skill-card:hover i,
 .skill-card.active i {
     font-size: 3rem;
+    margin-bottom: 15px;
 }
 
 /* Projects Section */
