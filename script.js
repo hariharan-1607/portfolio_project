@@ -107,3 +107,20 @@ const sectionObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('section').forEach(section => {
     sectionObserver.observe(section);
 });
+
+// Click Interaction for Skills and Projects (Touch/Mobile support)
+const interactiveCards = document.querySelectorAll('.skill-card, .project-card');
+
+interactiveCards.forEach(card => {
+    card.addEventListener('click', () => {
+        // Toggle active class
+        card.classList.toggle('active');
+
+        // Optional: Close other cards when one is opened
+        interactiveCards.forEach(otherCard => {
+            if (otherCard !== card) {
+                otherCard.classList.remove('active');
+            }
+        });
+    });
+});

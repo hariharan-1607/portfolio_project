@@ -367,23 +367,34 @@ ul {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
+.skill-card h3,
+.skill-card p {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition);
+}
+
+.skill-card:hover h3,
+.skill-card:hover p,
+.skill-card.active h3,
+.skill-card.active p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .skill-card i {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 20px;
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: var(--transition);
 }
 
-.skill-card h3 {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-}
-
-.skill-card p {
-    color: var(--text-dim);
-    font-size: 0.9rem;
+.skill-card:hover i,
+.skill-card.active i {
+    font-size: 3rem;
 }
 
 /* Projects Section */
@@ -407,9 +418,46 @@ ul {
     border-color: var(--primary-color);
 }
 
+.project-icon-top {
+    font-size: 5rem;
+    padding: 60px 0;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.02);
+    transition: var(--transition);
+}
+
+.project-icon-top i {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .project-info {
     padding: 30px;
     text-align: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 5;
+}
+
+.project-card:hover .project-info,
+.project-card.active .project-info {
+    top: 0;
+}
+
+.project-card:hover .project-icon-top,
+.project-card.active .project-icon-top {
+    opacity: 0.1;
+    transform: scale(0.8);
 }
 
 .project-info h3 {
