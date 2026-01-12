@@ -57,8 +57,8 @@ ul {
 
 /* Sections */
 .section {
-    padding: 60px 0;
-    min-height: 100vh;
+    padding: 80px 0;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,6 +72,7 @@ ul {
     opacity: 0.15;
     pointer-events: none;
 }
+
 
 .bg-light {
     background-color: var(--bg-light);
@@ -149,6 +150,11 @@ ul {
     color: var(--primary-color);
 }
 
+.nav-links.active {
+    right: 0;
+}
+
+
 .cta-btn {
     background: var(--gradient);
     padding: 10px 25px;
@@ -166,11 +172,18 @@ ul {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    z-index: 1001;
+    transition: var(--transition);
 }
+
+.hamburger.active {
+    color: var(--primary-color);
+}
+
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     position: relative;
@@ -185,6 +198,7 @@ ul {
     width: 100%;
 }
 
+
 .hero-content {
     flex: 1;
 }
@@ -197,17 +211,23 @@ ul {
 }
 
 .hero h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 10px;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
+
 .typing-text {
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 4vw, 2rem);
     color: var(--text-dim);
     margin-bottom: 20px;
 }
+
 
 .description {
     font-size: 1.1rem;
@@ -259,15 +279,22 @@ ul {
 }
 
 .img-wrapper {
-    width: 350px;
-    height: 350px;
+    width: clamp(280px, 40vw, 450px);
+    height: clamp(280px, 40vw, 450px);
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid var(--bg-light);
-    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+    border: 8px solid var(--bg-light);
+    box-shadow: 0 0 50px rgba(99, 102, 241, 0.4);
     z-index: 2;
     background-color: #333;
+    transition: var(--transition);
 }
+
+.img-wrapper:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 60px rgba(99, 102, 241, 0.6);
+}
+
 
 .img-wrapper img {
     width: 100%;
@@ -428,19 +455,30 @@ ul {
 }
 
 /* Allow horizontal scroll if skills overflow on mobile */
+/* Adjust grid for skills on mobile */
 @media (max-width: 768px) {
     .skills-grid {
-        overflow-x: auto;
-        justify-content: flex-start;
-        padding-bottom: 20px;
-        -webkit-overflow-scrolling: touch;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
+        padding: 0 10px;
     }
 
     .skill-card {
-        flex: 0 0 250px;
-        /* Don't shrink cards on mobile */
+        padding: 20px;
+        min-height: 120px;
+    }
+
+    .skill-card i {
+        font-size: 3.5rem;
+    }
+
+    .skill-card:hover i,
+    .skill-card.active i {
+        font-size: 2.5rem;
     }
 }
+
 
 /* Custom alignment for specific sections to move headings to top-center */
 #skills,
@@ -745,13 +783,30 @@ footer {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
-        /* simple helper, real logic should be js toggle */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100dvh;
+        background: var(--bg-dark);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0;
     }
 
     .hamburger {
         display: block;
     }
+
 
     .hero-container {
         flex-direction: column-reverse;
@@ -772,9 +827,25 @@ footer {
 
     .hero-btns {
         justify-content: center;
+        flex-wrap: wrap;
     }
+
 
     .contact-wrapper {
         grid-template-columns: 1fr;
+        padding: 30px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .about-wrapper {
+        padding: 25px;
     }
 }

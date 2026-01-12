@@ -16,21 +16,17 @@ const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
 hamburger.addEventListener('click', () => {
-    // Simple toggle for demo
-    if (navLinks.style.display === 'flex') {
-        navLinks.style.display = 'none';
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+
+    // Toggle body scroll
+    if (navLinks.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
     } else {
-        navLinks.style.display = 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '70px';
-        navLinks.style.left = '0';
-        navLinks.style.width = '100%';
-        navLinks.style.background = 'var(--bg-dark)';
-        navLinks.style.padding = '20px';
-        navLinks.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+        document.body.style.overflow = 'initial';
     }
 });
+
 
 // Smooth Scrolling for Anchor Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -38,9 +34,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
 
         // Close mobile menu if open
-        if (window.innerWidth <= 768) {
-            navLinks.style.display = 'none';
-        }
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = 'initial';
+
 
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
