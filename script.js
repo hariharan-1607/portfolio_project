@@ -48,21 +48,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form Submission (Demo)
+// Form Submission (Direct Email via mailto)
 document.getElementById("contact-form").addEventListener("submit", function (event) {
     event.preventDefault();
-    const btn = this.querySelector('button');
-    const originalText = btn.textContent;
 
-    btn.textContent = 'Sending...';
-    btn.style.opacity = '0.7';
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
+    // Construct the mailto URL
+    const subject = encodeURIComponent(`Portfolio Message from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\r\nEmail: ${email}\r\n\r\nMessage:\r\n${message}`);
+    const mailtoUrl = `mailto:haribala112006@gmail.com?subject=${subject}&body=${body}`;
+
+    // Create a temporary link and click it (more reliable than window.location)
+    const tempLink = document.createElement('a');
+    tempLink.href = mailtoUrl;
+    document.body.appendChild(tempLink);
+    tempLink.click();
+    document.body.removeChild(tempLink);
+
+    // Give a brief hint to the user
     setTimeout(() => {
-        alert("Thank you! Your message has been sent successfully.");
+        alert("Redirecting to your email app... If it doesn't open, please check if you have a default mail client set up.");
         this.reset();
-        btn.textContent = originalText;
-        btn.style.opacity = '1';
-    }, 1500);
+    }, 500);
 });
 
 // Intersection Observer for Scroll Animations

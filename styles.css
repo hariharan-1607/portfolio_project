@@ -25,6 +25,13 @@
     scroll-behavior: smooth;
 }
 
+html {
+    scroll-snap-type: y mandatory;
+    height: 100%;
+    scroll-padding-top: 80px;
+    /* Navbar height */
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-dark);
@@ -50,7 +57,12 @@ ul {
 
 /* Sections */
 .section {
-    padding: 100px 0;
+    padding: 60px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
     transition: filter 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: filter, opacity;
 }
@@ -162,8 +174,7 @@ ul {
     align-items: center;
     position: relative;
     overflow-x: hidden;
-    padding-top: 80px;
-    /* navbar height */
+    scroll-snap-align: start;
 }
 
 .hero-container {
@@ -345,30 +356,110 @@ ul {
     color: var(--primary-color);
 }
 
+.stat-item i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-desc {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-top: 15px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.stat-item:hover .stat-desc {
+    opacity: 1;
+    max-height: 100px;
+}
+
+.leetcode-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    padding: 0 15px;
+    height: 35px;
+    border-radius: 20px;
+    background: #ffa116;
+    /* LeetCode orange */
+    color: white;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: var(--transition);
+    opacity: 0;
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(255, 161, 22, 0.3);
+}
+
+.leetcode-icon-link span {
+    font-family: 'Poppins', sans-serif;
+}
+
+.stat-item:hover .leetcode-icon-link {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-5px);
+}
+
+.leetcode-icon-link:hover {
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+    transform: translateY(-8px) scale(1.1);
+}
+
 /* Skills Section */
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    justify-content: center;
     gap: 30px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+/* Allow horizontal scroll if skills overflow on mobile */
+@media (max-width: 768px) {
+    .skills-grid {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 20px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .skill-card {
+        flex: 0 0 250px;
+        /* Don't shrink cards on mobile */
+    }
 }
 
 .skill-card {
-    background: var(--bg-dark);
+    background: transparent;
     padding: 30px;
     border-radius: var(--border-radius);
     text-align: center;
     transition: var(--transition);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 280px;
+    min-height: 150px;
+    cursor: pointer;
 }
 
 .skill-card:hover {
     transform: translateY(-10px);
-    background: rgba(99, 102, 241, 0.1);
+    background: var(--bg-dark);
+    border-color: rgba(99, 102, 241, 0.2);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
@@ -412,25 +503,41 @@ ul {
 }
 
 .project-card {
-    background: var(--bg-light);
+    background: transparent;
     border-radius: var(--border-radius);
     overflow: hidden;
     transition: var(--transition);
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
+    background: var(--bg-light);
     border-color: var(--primary-color);
 }
 
 .project-icon-top {
-    font-size: 5rem;
-    padding: 60px 0;
+    font-size: 6rem;
+    padding: 80px 0;
     text-align: center;
-    background: rgba(255, 255, 255, 0.02);
+    background: transparent;
     transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-img-icon {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    transition: var(--transition);
+}
+
+.project-card:hover .project-img-icon {
+    transform: scale(1.1) translateY(-10px);
 }
 
 .project-icon-top i {
@@ -588,6 +695,7 @@ footer {
     padding: 30px 0;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    scroll-snap-align: end;
 }
 
 .footer-container {

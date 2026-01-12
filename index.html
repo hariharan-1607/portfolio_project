@@ -48,8 +48,7 @@
             </div>
             <div class="hero-image">
                 <div class="img-wrapper">
-                    <img src="assets/profile.jpg" alt="Hariharan"
-                        onerror="this.src='https://via.placeholder.com/400x400?text=Profile+Image'">
+                    <img src="assets/profile.jpg" alt="Hariharan">
                 </div>
                 <div class="shape shape-1"></div>
                 <div class="shape shape-2"></div>
@@ -72,16 +71,28 @@
 
                     <div class="stats-grid">
                         <div class="stat-item">
+                            <i class="fas fa-layer-group"></i>
                             <h3>Full Stack</h3>
                             <p>Development</p>
+                            <span class="stat-desc">Building end-to-end web applications with seamless frontend and
+                                robust backend integration.</span>
                         </div>
                         <div class="stat-item">
+                            <i class="fas fa-code"></i>
                             <h3>MERN</h3>
                             <p>Specialist</p>
+                            <span class="stat-desc">Expertise in MongoDB, Express.js, React, and Node.js for modern web
+                                solutions.</span>
                         </div>
                         <div class="stat-item">
-                            <h3>Problem</h3>
-                            <p>Solving</p>
+                            <i class="fas fa-brain"></i>
+                            <h3>Problem Solving</h3>
+                            <span class="stat-desc">Analyzing complex challenges and implementing efficient algorithmic
+                                solutions.</span>
+                            <a href="https://leetcode.com/u/hariharan_1607/" target="_blank" class="leetcode-icon-link"
+                                title="LeetCode Profile">
+                                <span>LeetCode</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -95,9 +106,9 @@
             <h2 class="section-title">My <span>Skills</span></h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <i class="fab fa-js"></i>
-                    <h3>JavaScript</h3>
-                    <p>Modern ES6+, DOM manipulation, fetch API, and dynamic interactivity.</p>
+                    <i class="fab fa-java"></i>
+                    <h3>Java</h3>
+                    <p>Object-oriented programming, data structures, and backend development with Java.</p>
                 </div>
                 <div class="skill-card">
                     <i class="fab fa-html5"></i>
@@ -105,14 +116,14 @@
                     <p>Semantic HTML5, CSS3, Flexbox, Grid, and Responsive Design.</p>
                 </div>
                 <div class="skill-card">
-                    <i class="fab fa-node-js"></i>
-                    <h3>Node.js</h3>
-                    <p>RESTful APIs, Express.js backend architecture, and middleware integration.</p>
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                    <p>Scripting, data analysis, and general-purpose programming with Python.</p>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-database"></i>
-                    <h3>MongoDB</h3>
-                    <p>NoSQL database design, Schema modeling with Mongoose, and aggregation.</p>
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <p>Modern ES6+, DOM manipulation, fetch API, and dynamic interactivity.</p>
                 </div>
             </div>
         </div>
@@ -125,7 +136,7 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-icon-top">
-                        <i class="fas fa-wallet"></i>
+                        <i class="fas fa-file-invoice-dollar"></i>
                     </div>
                     <div class="project-info">
                         <h3>Personal Budget Manager</h3>
@@ -169,15 +180,15 @@
 
                 <form id="contact-form" class="modern-form">
                     <div class="form-group">
-                        <input type="text" id="name" required placeholder=" ">
+                        <input type="text" id="name" name="name" required placeholder=" ">
                         <label for="name">Your Name</label>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" required placeholder=" ">
+                        <input type="email" id="email" name="email" required placeholder=" ">
                         <label for="email">Your Email</label>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" rows="5" required placeholder=" "></textarea>
+                        <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
                         <label for="message">Your Message</label>
                     </div>
                     <button type="submit" class="btn primary-btn">Send Message</button>
