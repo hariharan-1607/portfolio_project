@@ -82,7 +82,8 @@ ul {
     font-size: 2.5rem;
     margin-bottom: 60px;
     position: relative;
-    /* Removed inline-block and transform hack for better centering */
+    width: 100%;
+    /* Ensure heading takes full width for centering */
 }
 
 .section-title span {
@@ -441,6 +442,14 @@ ul {
     }
 }
 
+/* Custom alignment for specific sections to move headings to top-center */
+#skills,
+#projects {
+    align-items: flex-start;
+    padding-top: 120px;
+    /* Space below navbar */
+}
+
 .skill-card {
     background: transparent;
     padding: 30px;
@@ -519,7 +528,7 @@ ul {
 
 .project-icon-top {
     font-size: 6rem;
-    padding: 80px 0;
+    padding: 100px 0;
     text-align: center;
     background: transparent;
     transition: var(--transition);
@@ -548,7 +557,7 @@ ul {
 }
 
 .project-info {
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     position: absolute;
     top: 100%;
@@ -561,11 +570,15 @@ ul {
     justify-content: center;
     transition: var(--transition);
     z-index: 5;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .project-card:hover .project-info,
 .project-card.active .project-info {
     top: 0;
+    opacity: 1;
+    visibility: visible;
 }
 
 .project-card:hover .project-icon-top,
@@ -589,7 +602,7 @@ ul {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     justify-content: center;
 }
 
