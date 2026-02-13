@@ -27,6 +27,15 @@ hamburger.addEventListener('click', () => {
     }
 });
 
+// Auto-hide mobile menu on mouse leave
+navLinks.addEventListener('mouseleave', () => {
+    if (navLinks.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = 'initial';
+    }
+});
+
 
 // Smooth Scrolling for Anchor Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
