@@ -811,7 +811,7 @@ footer {
     .hero-container {
         flex-direction: column-reverse;
         text-align: center;
-        padding-top: 140px;
+        padding-top: 100px;
     }
 
     .hero-image {
